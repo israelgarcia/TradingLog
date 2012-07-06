@@ -1,0 +1,41 @@
+<h1>Listing trades</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Instrument</th>
+    <th>Odate</th>
+    <th>Otime</th>
+    <th>Oshares</th>
+    <th>Obias</th>
+    <th>Otype</th>
+    <th>Oprice</th>
+    <th>Oeffect</th>
+    <th>Onotes</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @trades.each do |trade| %>
+  <tr>
+    <td><%= trade.user_id %></td>
+    <td><%= trade.instrument_id %></td>
+    <td><%= trade.odate %></td>
+    <td><%= trade.otime %></td>
+    <td><%= trade.oshares %></td>
+    <td><%= trade.obias %></td>
+    <td><%= trade.otype %></td>
+    <td><%= trade.oprice %></td>
+    <td><%= trade.oeffect %></td>
+    <td><%= trade.onotes %></td>
+    <td><%= link_to 'Show', trade %></td>
+    <td><%= link_to 'Edit', edit_trade_path(trade) %></td>
+    <td><%= link_to 'Destroy', trade, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Trade', new_trade_path %>

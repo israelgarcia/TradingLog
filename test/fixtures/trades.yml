@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_id: 1
+  instrument_id: 1
+  odate: 2012-07-06
+  otime: 2012-07-06 10:40:07
+  oshares: 1
+  obias: 1
+  otype: 1
+  oprice: 9.99
+  oeffect: 1
+  onotes: MyText
+
+two:
+  user_id: 1
+  instrument_id: 1
+  odate: 2012-07-06
+  otime: 2012-07-06 10:40:07
+  oshares: 1
+  obias: 1
+  otype: 1
+  oprice: 9.99
+  oeffect: 1
+  onotes: MyText

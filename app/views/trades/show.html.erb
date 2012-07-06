@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @trade.user_id %>
+</p>
+
+<p>
+  <b>Instrument:</b>
+  <%= @trade.instrument_id %>
+</p>
+
+<p>
+  <b>Odate:</b>
+  <%= @trade.odate %>
+</p>
+
+<p>
+  <b>Otime:</b>
+  <%= @trade.otime %>
+</p>
+
+<p>
+  <b>Oshares:</b>
+  <%= @trade.oshares %>
+</p>
+
+<p>
+  <b>Obias:</b>
+  <%= @trade.obias %>
+</p>
+
+<p>
+  <b>Otype:</b>
+  <%= @trade.otype %>
+</p>
+
+<p>
+  <b>Oprice:</b>
+  <%= @trade.oprice %>
+</p>
+
+<p>
+  <b>Oeffect:</b>
+  <%= @trade.oeffect %>
+</p>
+
+<p>
+  <b>Onotes:</b>
+  <%= @trade.onotes %>
+</p>
+
+
+<%= link_to 'Edit', edit_trade_path(@trade) %> |
+<%= link_to 'Back', trades_path %>

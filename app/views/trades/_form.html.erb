@@ -1,0 +1,57 @@
+<%= form_for(@trade) do |f| %>
+  <% if @trade.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@trade.errors.count, "error") %> prohibited this trade from being saved:</h2>
+
+      <ul>
+      <% @trade.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %><br />
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :instrument_id %><br />
+    <%= f.number_field :instrument_id %>
+  </div>
+  <div class="field">
+    <%= f.label :odate %><br />
+    <%= f.date_select :odate %>
+  </div>
+  <div class="field">
+    <%= f.label :otime %><br />
+    <%= f.time_select :otime %>
+  </div>
+  <div class="field">
+    <%= f.label :oshares %><br />
+    <%= f.number_field :oshares %>
+  </div>
+  <div class="field">
+    <%= f.label :obias %><br />
+    <%= f.number_field :obias %>
+  </div>
+  <div class="field">
+    <%= f.label :otype %><br />
+    <%= f.number_field :otype %>
+  </div>
+  <div class="field">
+    <%= f.label :oprice %><br />
+    <%= f.text_field :oprice %>
+  </div>
+  <div class="field">
+    <%= f.label :oeffect %><br />
+    <%= f.number_field :oeffect %>
+  </div>
+  <div class="field">
+    <%= f.label :onotes %><br />
+    <%= f.text_area :onotes %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
