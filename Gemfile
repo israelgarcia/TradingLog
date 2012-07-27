@@ -9,6 +9,8 @@ group :development, :test do
   gem 'sqlite3'
 end
 
+  gem 'annotate' , '~> 2.4.1.beta' , group: :development
+
 gem 'execjs'
 gem 'therubyracer'
 

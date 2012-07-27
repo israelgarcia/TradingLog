@@ -1,3 +1,22 @@
+# == Schema Information
+#
+# Table name: trades
+#
+#  id            :integer         not null, primary key
+#  user_id       :integer
+#  instrument_id :integer
+#  odate         :date
+#  otime         :time
+#  oshares       :integer
+#  obias         :integer
+#  otype         :integer
+#  oprice        :decimal(, )
+#  oeffect       :integer
+#  onotes        :text
+#  created_at    :datetime        not null
+#  updated_at    :datetime        not null
+#
+
 class Trade < ActiveRecord::Base
   attr_accessible :instrument_id, :obias, :odate, :oeffect, :onotes, :oprice, :oshares, :otime, :otype, :user_id
 
