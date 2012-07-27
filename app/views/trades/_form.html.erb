@@ -18,8 +18,8 @@
     <%= f.number_field :user_id %>
   </div>
   <div class="field">
-    <%= f.label :instrument_id %><br />
-    <%= f.number_field :instrument_id %>
+    <%= "Choose a financial instrument." %><br />
+    <%= collection_select(:trade, :instrument_id, Instrument.all, :id, :symbol)%>
   </div>
   <div class="field">
     <%= "Date" %><br />
