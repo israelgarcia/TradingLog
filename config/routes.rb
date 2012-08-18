@@ -1,5 +1,6 @@
 TradingLog::Application.routes.draw do
-  root to: 'static_pages#home'
+
+  
   match '/help', to: 'static_pages#help'
   match '/about', to: 'static_pages#about'
   match '/contact', to: 'static_pages#contact'
@@ -7,15 +8,23 @@ TradingLog::Application.routes.draw do
   match '/signin', to: 'sessions#new'
   match '/signout', to: 'sessions#destroy', via: :delete
 
-  resources :trades
+  resources :trades 
 
   resources :instruments
 
-  resources :users
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
 
   resources :sessions, only: [:new, :create, :destroy]
 
-  root :to => "home#index"
+  resources :tweets, only: [:create, :destroy]
+
+  resources :relationships, only: [:create, :destroy]
+
+  root to: 'static_pages#home'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

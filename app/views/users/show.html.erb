@@ -1,27 +1,27 @@
 <% provide(:title, @user.name) %>
 <div class="row">
   <aside class="span4">
-    <sectio>
+    <section>
       <h1>
         <%= gravatar_for @user %>
         <%= @user.name %>
       </h1>
     </section>
+    <section>
+      <%= render 'shared/stats' %>
+    </section>
   </aside>
+  <div class="span8">
+    <%= render 'follow_form' if signed_in? %>
+    <% if @user.tweets.any? %>
+      <h3>Posts (<%= @user.tweets.count %>)</h3>
+      <ol class="tweets">
+        <%= render @tweets %>
+      </ol>
+      <%= will_paginate @tweets %>
+    <% end %>
+  </div>
 </div>
-
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Email:</b>
-  <%= @user.email %>
-</p>
-
-<p>
-  <b>Name:</b>
-  <%= @user.name %>
-</p>
-
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

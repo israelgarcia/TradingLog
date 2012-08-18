@@ -18,10 +18,14 @@
 #
 
 class Trade < ActiveRecord::Base
-  attr_accessible :instrument_id, :obias, :odate, :oeffect, :onotes, :oprice, :oshares, :otime, :otype, :user_id
+  attr_accessible  :obias, :odate, :oeffect, :onotes, :oprice, :oshares, :otime, :otype 
+  validates :user_id, presence: true
+  validates :instrument_id, presence: true
 
   belongs_to :user
   belongs_to :instrument
+
+  default_scope order: 'trades.otime DESC'
 
   def const 
     constants = { :long => 1 , :short => 2 , :buy => 3 , :sell => 4 , :open => 5 , :close => 6 } 

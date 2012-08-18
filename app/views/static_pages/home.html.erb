@@ -1,2 +1,32 @@
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+<% if signed_in? %>
+  <div class="row">
+    <aside class="span4">
+      <section>
+        <%= render 'shared/user_info' %>
+      </section>
+      <section>
+        <%= render 'shared/stats' %>
+      </section>
+      <section>
+        <%= render 'shared/tweet_form' %>
+      </section>
+    </aside> 
+    <div class="span8">
+      <h3>Post Feed</h3>
+      <%= render 'shared/feed' %>
+    </div>
+  </div>
+<% else %>
+  <div class="center hero-unit">
+    <h1>Welcome to the TradingLog</h1>
+
+    <h2>
+      Visit <a href="http://www.trade-for-income.com"> www.trade-for-income.com</a> for trading resources.
+    </h2>
+    <%= link_to "Sign up now!" , signup_path,
+                                 class: "btn btn-large btn-primary" %>
+  </div>
+
+  <%= link_to image_tag("rails.png", alt: "Rails"), 'http://www.trade-for-income.com' %>
+<% end %>
+
