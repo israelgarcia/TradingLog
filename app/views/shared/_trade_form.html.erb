@@ -1,0 +1,56 @@
+<%= form_for(@trade) do |f| %>
+  <%= render 'shared/error_messages',object: f.object %>
+  <div class="field">
+    <% k = Trade.new %>
+
+  <div class="field">
+    <%= f.label :user_id %><br />
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="field">
+    <h2>This order opens position</h2>
+    <%= "Choose a financial instrument." %><br />
+    <%= collection_select(:trade, :instrument_id, Instrument.all, :id, :symbol)%>
+  </div>
+  <div class="field">
+    <%= "Date " %><br />
+    <%= f.date_select :odate %>
+  </div>
+  <div class="field">
+    <%= "Time (opening trade)" %><br />
+    <%= f.time_select :otime %>
+  </div>
+  <div class="field">
+    <%= "Choose BUY or SELL "  %><br />
+    <%= f.select :otype, [["Buy",k.const[:buy]],["Sell",k.const[:sell]]] %>
+  </div>  
+  <div class="field">
+    <%= "Number of shares or contracts " %><br />
+    <%= f.number_field :oshares %>
+  </div>
+  <div class="field">
+    <%= "Price"  %><br />
+    <%= f.text_field :oprice %>
+  </div>
+  <div class="field">
+    <h2>This order closes position</h2>
+    <%= "Date " %><br />
+    <%= f.date_select :cdate %>
+  </div>
+  <div class="field">
+    <%= "Time (opening trade)" %><br />
+    <%= f.time_select :ctime %>
+  </div>
+  <div class="field">
+    <%= "Price"  %><br />
+    <%= f.text_field :cprice %>
+  </div>
+  <div class="field">
+    <%= "Maximum Drawdown during the trade"  %><br />
+    <%= f.text_field :mdrawdown %>
+  </div>  <div class="field">
+    <%= "Comments for this trade." %><br />
+    <%= f.text_area :onotes %>
+  </div>
+  <%= f.submit "Save this trade", class: "btn btn-large btn-primary" %>
+<% end %>
