@@ -1,55 +1,32 @@
-<p id="notice"><%= notice %></p>
+<% provide(:title, 'My trades') %>
+<h1>My trades</h1>
 
-<p>
-  <b>User:</b>
-  <%= @trade.user_id %>
-</p>
+<%= will_paginate %>
 
-<p>
-  <b>Instrument:</b>
-  <%= @trade.instrument_id %>
-</p>
+<ul class="trades">
 
-<p>
-  <b>Odate:</b>
-  <%= @trade.odate %>
-</p>
+  <table border="1">
+  <tr>
+  <th>Trade ID</th>
+  <th>Instrument</th>
+  <th>Opening Date</th>
+  <th>Time</th>
+  <th>Shares/contracts</th>
+  <th>Buy/Sell</th>
+  <th>Price</th>
+  <th>Closing Date</th>
+  <th>Time</th>
+  <th>Price</th>
+  <th>Max Drawdown</th>
+  <th>Trade PnL</th>
+  </tr>
 
-<p>
-  <b>Otime:</b>
-  <%= @trade.otime %>
-</p>
+  <%= render @trades %>
 
-<p>
-  <b>Oshares:</b>
-  <%= @trade.oshares %>
-</p>
+  </table>  
 
-<p>
-  <b>Obias:</b>
-  <%= @trade.obias %>
-</p>
+</ul>
 
-<p>
-  <b>Otype:</b>
-  <%= @trade.otype %>
-</p>
+<%= will_paginate %>
 
-<p>
-  <b>Oprice:</b>
-  <%= @trade.oprice %>
-</p>
-
-<p>
-  <b>Oeffect:</b>
-  <%= @trade.oeffect %>
-</p>
-
-<p>
-  <b>Onotes:</b>
-  <%= @trade.onotes %>
-</p>
-
-
-<%= link_to 'Edit', edit_trade_path(@trade) %> |
-<%= link_to 'Back', trades_path %>
+<%= link_to 'Add a new trade', new_trade_path %>

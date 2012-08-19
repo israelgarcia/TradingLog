@@ -18,7 +18,7 @@
 #
 
 class Trade < ActiveRecord::Base
-  attr_accessible  :obias, :odate, :oeffect, :onotes, :oprice, :oshares, :otime, :otype 
+  attr_accessible  :odate, :onotes, :oprice, :oshares, :otime, :otype, :cdate, :ctime, :cprice , :mdrawdown , :instrument_id 
   validates :user_id, presence: true
   validates :instrument_id, presence: true
 

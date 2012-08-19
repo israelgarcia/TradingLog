@@ -1,5 +1,14 @@
-<h1>New trade</h1>
+<% provide(:title, 'Add new trade') %>
+<h1>Add a new trade</h1>
 
-<%= render 'form' %>
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@trade) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+      <%= render 'fields', f: f %>
+      <%= f.submit "Save new trade", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>
 
 <%= link_to 'Back', trades_path %>

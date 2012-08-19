@@ -1,15 +1,12 @@
-<p id="notice"><%= notice %></p>
+<% provide(:title, 'All financial instruments') %>
+<h1>All financial instruments</h1>
 
-<p>
-  <b>Symbol:</b>
-  <%= @instrument.symbol %>
-</p>
+<%= will_paginate %>
 
-<p>
-  <b>Name:</b>
-  <%= @instrument.name %>
-</p>
+<ul class="instruments">
+  <%= render @instruments %>
+</ul>
 
+<%= will_paginate %>
 
-<%= link_to 'Edit', edit_instrument_path(@instrument) %> |
-<%= link_to 'Back', instruments_path %>
+<%= link_to 'New Instrument', new_instrument_path %>

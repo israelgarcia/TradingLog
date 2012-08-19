@@ -1,6 +1,14 @@
-<h1>Editing instrument</h1>
+<% provide(:title, 'Edit financial instrument') %>
+<h1>Edit financial instrument</h1>
 
-<%= render 'form' %>
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@instrument) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+      <%= render 'fields', f: f %>
+      <%= f.submit "Save edited financial instrument", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>
 
-<%= link_to 'Show', @instrument %> |
 <%= link_to 'Back', instruments_path %>

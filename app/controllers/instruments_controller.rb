@@ -1,35 +1,16 @@
 class InstrumentsController < ApplicationController
-  # GET /instruments
-  # GET /instruments.json
+  before_filter :signed_in_user
+
   def index
-    @instruments = Instrument.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @instruments }
-    end
+    @instruments = Instrument.paginate(page: params[:page])
   end
 
-  # GET /instruments/1
-  # GET /instruments/1.json
   def show
-    @instrument = Instrument.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @instrument }
-    end
+    @instruments = Instrument.paginate(page: params[:page])
   end
 
-  # GET /instruments/new
-  # GET /instruments/new.json
   def new
     @instrument = Instrument.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @instrument }
-    end
   end
 
   # GET /instruments/1/edit

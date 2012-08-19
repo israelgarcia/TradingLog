@@ -1,7 +1,21 @@
-<li>
-  <span class="oshares"><%= trades.oshares %></span>
-  <span class="timestamp">
-    Posted <%= time_ago_in_words(trades.created_at) %> ago.
-  </span>
-</li>
+<tr>
+  <% i = Instrument.find(trade.instrument_id) %>
+  <td><%= link_to (trade.id), edit_trade_path(trade.id) %></td>
+  <td><%= i.symbol %></td> 
+  <td><%= trade.odate %></td>
+  <td><%= trade.otime.to_s(:time) %></td>
+  <td><%= trade.oshares %></td>
+  <td><%= trade.constlabels[trade.otype] %></td>
+  <td><%= trade.oprice %></td>
+  <td><%= trade.cdate %></td>
+  <td><%= trade.ctime.to_s(:time) %></td>
+  <td><%= trade.cprice %></td>
+  <td><%= trade.mdrawdown %></td>
+  <% if trade.otype == trade.const[:buy] %>
+    <% factor = 1 %>
+    <% else %>
+    <% factor = -1 %>
+  <% end %>
+  <td><%= (trade.cprice-trade.oprice)*factor %></td>
+</tr>
 
