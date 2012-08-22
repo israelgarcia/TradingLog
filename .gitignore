@@ -20,4 +20,8 @@ doc/
 *~
 .project
 .DS_Store
-
+spec/
+test/
+libiconv-1.13.1.1delete/
+libiconv-1.13.1.tar.gz
+libiconv-1.13.1/
