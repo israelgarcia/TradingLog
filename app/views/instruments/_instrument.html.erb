@@ -1,0 +1,8 @@
+<li>
+  <%= link_to (instrument.symbol+" "+instrument.name), instrument %>
+  <% if current_user.admin?   %>
+    | <%= link_to "delete", instrument, method: :delete,
+                                  data: { confirm: "You sure?" } %>
+  <% end %>
+</li>
+

@@ -1,0 +1,38 @@
+<%= render 'shared/error_messages', object: f.object %>
+
+<% k = Trade.new %>
+    
+<%= "Choose a financial instrument." %>
+<%= collection_select(:trade, :instrument_id, Instrument.all, :id, :symbol)%>
+
+<%= "Opening order details" %>
+<%= "Date" %>
+<%= f.date_select :odate %>
+
+<%= "Time" %>
+<%= f.time_select :otime %>
+
+<%= "Number of shares or contracts " %>
+<%= f.number_field :oshares %>
+
+<%= "Choose BUY or SELL "  %>
+<%= f.select :otype, [["Buy",k.const[:buy]],["Sell",k.const[:sell]]] %>
+
+<%= "Price"  %>
+<%= f.text_field :oprice %>
+
+<%= "Closing order details" %>
+<%= "Date" %>
+<%= f.date_select :cdate %>
+
+<%= "Time" %>
+<%= f.time_select :ctime %>
+
+<%= "Price"  %>
+<%= f.text_field :cprice %>
+
+<%= "Max Drawdown during the trade" %>
+<%= f.text_field :mdrawdown %>
+
+<%= "Comments for this trade." %>
+<%= f.text_area :onotes %>
