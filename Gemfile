@@ -31,7 +31,7 @@ end
 gem 'annotate' , '~> 2.4.1.beta' , group: :development
 
 gem 'execjs'
-gem 'therubyracer'
+# gem 'therubyracer' quitar en windows  
 
 # Gems used only for assets and not required
 # in production environments by default.

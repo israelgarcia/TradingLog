@@ -247,3 +247,23 @@ aside {
     }
   }
 }
+
+/* tables */
+
+table,td,th
+{
+border:1px solid black;
+}
+td
+{
+text-align:right;
+background-color: yellow;
+}
+.profit_color
+{
+background-color: green;
+}
+.loss_color
+{
+background-color: red;
+}

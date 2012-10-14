@@ -16,6 +16,12 @@
     <% else %>
     <% factor = -1 %>
   <% end %>
-  <td><%= (trade.cprice-trade.oprice)*factor %></td>
+  <% pnl = (trade.cprice-trade.oprice)*factor %>
+  <% if pnl >= 0 %>
+    <% bgcolor = "green" %>
+    <% else %>
+    <% bgcolor = "red" %>
+  <% end %>
+  <td style="background-color:<%=bgcolor%>"><%= pnl  %></td>
 </tr>
 
